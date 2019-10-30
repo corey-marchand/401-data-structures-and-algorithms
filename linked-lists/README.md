@@ -10,5 +10,5 @@ Code Challenges 401 - Linked Lists #08- By Corey Marchand
 # Approach & Efficiency
 * Solution
 
-![picture](./linked-lists/assets/mergeLL.JPG)
+[picture](./linked-lists/assets/mergeLL.JPG)
 
