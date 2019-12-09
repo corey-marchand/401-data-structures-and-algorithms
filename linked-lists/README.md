@@ -9,4 +9,3 @@ Code Challenges 401 - Linked Lists #08- By Corey Marchand
 
 # Approach & Efficiency
 * Solution
-[Whiteboard photo](https://photos.google.com/search/_tra_/photo/AF1QipNeOJeFBGXjBIfdfXhmC-qbuIiI7QE3P2f5huYI)
