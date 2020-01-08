@@ -1,0 +1,18 @@
+{
+  "name": "linked-lists",
+  "version": "1.0.0",
+  "description": "Code Challenges 401 - Linked Lists #08- By Corey Marchand",
+  "main": "javascript.js",
+  "scripts": {
+    "test": "jest --verbose",
+    "lint": "eslint '**/*.js'"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "eslint": "^6.8.0",
+    "jest": "^24.9.0",
+    "lint": "^0.7.0"
+  }
+}
