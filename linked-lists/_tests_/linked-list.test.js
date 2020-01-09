@@ -12,9 +12,11 @@ describe('testing LinkedLists', () => {
     expect(newLL.head).toBe(null);
   });
 
-  it('Can properly insert into the linked list', () => {
+  it('Can properly append into the linked list', () => {
     newLL.append(1);
-    expect(newLL.size).toEqual(1);
+    newLL.append(2);
+    newLL.append(3);
+    expect(newLL.head.next.next.value).toEqual(3);
   });
 
   it('The head property will properly point to the first node in the linked list', () => {
@@ -24,7 +26,7 @@ describe('testing LinkedLists', () => {
     expect(newLL.head.next.value).toEqual(2);
   });
 
-  it('Can properly insert multiple nodes into the linked list', () => {
+  it('Can properly append multiple nodes into the linked list', () => {
     newLL.append(3);
     newLL.append(4);
     newLL.append(5);
@@ -49,6 +51,48 @@ describe('testing LinkedLists', () => {
     newLL.append(2);
     newLL.append(3);
     newLL.append(4);
-    expect(newLL.toString()).toEqual(' 2 3 4 ');
+    expect(newLL.toString()).toEqual('234');
+  });
+
+  it('Can successfully add a node to the end of the linked list', () => {
+    newLL.append(1);
+    expect(newLL.size).toEqual(1);
+  });
+
+  it('Can successfully add multiple nodes to the end of a linked list', () => {
+    newLL.append(1);
+    newLL.append(2);
+    newLL.append(3);
+    expect(newLL.head.next.next.value).toEqual(3);
+  });
+
+  it('Can successfully insert a node before a node located in the middle of a linked list', () => {
+    newLL.append(9);
+    newLL.append(11);
+    newLL.insertBefore(11,10);
+    expect(newLL.head.next.value).toEqual(10);
+  });
+
+  it('Can successfully insert a node before the first node of a linked list', () => {
+    newLL.append(3);
+    newLL.append(4);
+    newLL.insertBefore(3,5);
+    expect(newLL.head.value).toEqual(5);
+  });
+
+  it('Can successfully insert after a node in the middle of the linked list', () => {
+    newLL.append(4);
+    newLL.append(5);
+    newLL.append(7);
+    newLL.insertAfter(5,6);
+    expect(newLL.head.next.next.value).toEqual(6);
+  });
+
+  it('Can successfully insert a node after the last node of the linked list', () => {
+    newLL.append(3);
+    newLL.append(3);
+    newLL.append(5);
+    newLL.insertAfter(5,7);
+    expect(newLL.head.next.next.next.value).toEqual(7);
   });
 });

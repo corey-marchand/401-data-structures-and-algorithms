@@ -5,7 +5,7 @@
   "main": "javascript.js",
   "scripts": {
     "test": "jest --verbose",
-    "lint": "eslint '**/*.js'"
+    "lint": "eslint '**/*.js' --fix"
   },
   "keywords": [],
   "author": "",

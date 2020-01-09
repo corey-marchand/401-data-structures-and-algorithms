@@ -12,18 +12,11 @@ class LinkedList {
     this.size = 0;
   }
 
-  //method will return a value that is added to the head
-  append(value){
-    if(this.head === null){
+  // method will return a value that is added to the head
+  insert(value){
+    if (this.head === null){
       this.head = new Node(value);
-    }else if(this.next !== null){
-      let currentNode = this.head;
-      while(currentNode.next !== null){
-        currentNode = currentNode.next;
-      }
-      currentNode.next = new Node(value);
     }
-    this.size++;
   }
 
   // method will return a boolean
@@ -50,6 +43,63 @@ class LinkedList {
       currentNode = currentNode.next;
     }
     return string;
+  }
+
+  // Adds a new node with the given value to the end of the list
+  append(value){
+    if(this.head === null) {
+      this.head = new Node(value);
+    } else if(this.next !== null){
+      let currentNode = this.head;
+      while(currentNode.next !== null){
+        currentNode = currentNode.next;
+      }
+      currentNode.next = new Node(value);
+    }
+    this.size++;
+  }
+
+  //Adds a new node with the given new value immediately before the first value node
+  insertBefore(value, newVal){
+    let node = new Node(newVal);
+    let currentNode = this.head;
+    let previousNode = null;
+
+    while(currentNode){
+      if(currentNode.value === value){
+        if(previousNode.value === null){
+          this.head = node;
+        } else {
+          previousNode.next = node;
+        }
+        node.next = currentNode;
+      }
+      previousNode = currentNode;
+      currentNode = currentNode.next;
+    }
+    this.size++;
+  }
+
+  // Adds a new node with the given newValue immediately after the first node value
+  insertAfter(value, newVal){
+    let node = new Node(newVal);
+    let currentNode = this.head;
+
+    if(currentNode.value === value){
+      node.next = currentNode;
+      this.head = node;
+      return;
+    }
+    currentNode = currentNode.next;
+
+    while (currentNode){
+      if(currentNode.value === value){
+        node.next = currentNode.next;
+        currentNode.next = node;
+        break;
+      }
+      currentNode = currentNode.next;
+    }
   }
 }
 
