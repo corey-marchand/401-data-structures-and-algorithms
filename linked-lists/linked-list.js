@@ -101,6 +101,25 @@ class LinkedList {
       currentNode = currentNode.next;
     }
   }
+  kthFromTheEnd(k){
+    let counter = 0;
+    let currentNode = this.head;
+    while(currentNode){
+      counter++;
+      currentNode = currentNode.next;
+    }
+    let kStart = counter - 1 -k;
+    if(kStart < 0 || k < 0) {
+      return 'error';
+    }
+    currentNode = this.head;
+
+    while (kStart > 0) {
+      kStart--;
+      currentNode = currentNode.next;
+    }
+    return currentNode;
+  }
 }
 
 
