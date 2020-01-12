@@ -95,4 +95,45 @@ describe('testing LinkedLists', () => {
     newLL.insertAfter(5,7);
     expect(newLL.head.next.next.next.value).toEqual(7);
   });
+
+  it('Where k is greater than the length of the linked list', () => {
+    newLL.append(69);
+    newLL.append(23);
+    newLL.append(2);
+    newLL.append(12);
+    expect(newLL.kthFromTheEnd(3).value).toEqual(69);
+  });
+
+  it('Where k and the length of the list are the same', () => {
+    newLL.append(2);
+    newLL.append(2);
+    newLL.append(4);
+    expect(newLL.kthFromTheEnd(2).value).toEqual(2);
+  });
+
+  it('Where k is not a positive integer', () => {
+    newLL.append(2);
+    newLL.append(3);
+    newLL.append(4);
+    expect(newLL.kthFromTheEnd(1).value).toEqual(3);
+  });
+
+  it('Where the linked list is of a size 1', () => {
+    newLL.append(0);
+    newLL.append(1);
+    expect(newLL.kthFromTheEnd(0).value).toBe(1);
+  });
+
+  it('“Happy Path” where k is not at the end, but somewhere in the middle of the linked list', () => {
+    newLL.append(1);
+    newLL.append(2);
+    newLL.append(3);
+    newLL.append(4);
+    newLL.append(5);
+    newLL.append(6);
+    newLL.append(7);
+    newLL.append(8);
+    newLL.append(9);
+    expect(newLL.kthFromTheEnd(4).value).toBe(5);
+  });
 });
