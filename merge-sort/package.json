@@ -1,0 +1,18 @@
+{
+  "name": "merge-sort",
+  "version": "1.0.0",
+  "description": "## Stepping through with Sample Data For the Merge sort, we tested the an array ([8,4,23,42,16,15]).  On the first pass, the left will be 4 and the right will be 23.  When they are merged is is [4, 23].  On pass two, the left is 8 and the right is the freshly merged [4, 23]. THen those are merged together and combine as [4, 8, 23].  Then during pass three, the left is now 16, the right now 15, and is it [15, 16] when it is merged.   During pass 4, the left is 42, the right is [15, 16] and it is  [15, 16, 42] when it is all merged.  Then on the 5th pass, the left is [4, 8, 23] the right is [15, 16, 42] and is merged to be [4, 8, 15, 16, 23, 42] which is the final array sorted.",
+  "main": "merge-sort.js",
+  "scripts": {
+    "test": "jest --verbose",
+    "lint": "eslint '**/*.js' --fix"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "eslint": "^6.8.0",
+    "jest": "^24.9.0",
+    "lint": "^0.7.0"
+  }
+}
